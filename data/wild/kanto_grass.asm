@@ -31,7 +31,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MOON
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent
 	; morn
 	db 6, ZUBAT
 	db 8, GEODUDE
@@ -39,7 +39,7 @@ KantoGrassWildMons:
 	db 12, PARAS
 	db 10, GEODUDE
 	db 8, CLEFAIRY
-	db 8, CLEFAIRY
+	db 8, KABUTO
 	; day
 	db 6, ZUBAT
 	db 8, GEODUDE
@@ -47,7 +47,7 @@ KantoGrassWildMons:
 	db 12, PARAS
 	db 10, GEODUDE
 	db 8, CLEFAIRY
-	db 8, CLEFAIRY
+	db 8, OMANYTE
 	; nite
 	db 6, ZUBAT
 	db 8, GEODUDE
@@ -67,7 +67,7 @@ KantoGrassWildMons:
 	db 12, ZUBAT
 	db 15, MACHOKE
 	db 12, MAROWAK
-	db 12, MAROWAK
+	db 15, AERODACTYL
 	; day
 	db 10, CUBONE
 	db 11, GEODUDE
@@ -75,7 +75,7 @@ KantoGrassWildMons:
 	db 12, ZUBAT
 	db 15, MACHOKE
 	db 12, MAROWAK
-	db 12, MAROWAK
+	db 15, AERODACTYL
 	; nite
 	db 12, ZUBAT
 	db 11, GEODUDE
@@ -341,7 +341,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_7
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 17, RATTATA
+	db 17, VULPIX
 	db 17, SPEAROW
 	db 18, SNUBBULL
 	db 18, RATICATE
@@ -349,7 +349,7 @@ KantoGrassWildMons:
 	db 16, ABRA
 	db 16, ABRA
 	; day
-	db 17, RATTATA
+	db 17, VULPIX
 	db 17, SPEAROW
 	db 18, SNUBBULL
 	db 18, RATICATE
@@ -359,7 +359,7 @@ KantoGrassWildMons:
 	; nite
 	db 17, MEOWTH
 	db 17, MURKROW
-	db 18, HOUNDOUR
+	db 18, VULPIX
 	db 18, PERSIAN
 	db 18, JIGGLYPUFF
 	db 16, ABRA
@@ -389,7 +389,7 @@ KantoGrassWildMons:
 	db 20, NOCTOWL
 	db 16, ABRA
 	db 17, HAUNTER
-	db 16, JIGGLYPUFF
+	db 16, VULPIX
 	db 18, KADABRA
 	db 18, KADABRA
 	end_grass_wildmons
@@ -679,7 +679,7 @@ KantoGrassWildMons:
 	; morn
 	db 3, RATTATA
 	db 3, SPEAROW
-	db 5, SPEAROW
+	db 5, MANKEY
 	db 4, DODUO
 	db 6, PONYTA
 	db 7, FEAROW
@@ -687,15 +687,15 @@ KantoGrassWildMons:
 	; day
 	db 3, RATTATA
 	db 3, SPEAROW
-	db 5, SPEAROW
+	db 5, MANKEY
 	db 4, DODUO
 	db 6, PONYTA
 	db 7, FEAROW
 	db 7, FEAROW
 	; nite
 	db 3, RATTATA
-	db 3, POLIWAG
-	db 5, RATTATA
+	db 3, MANKEY
+	db 5, MANKEY
 	db 4, POLIWAG
 	db 6, RATTATA
 	db 7, RATTATA

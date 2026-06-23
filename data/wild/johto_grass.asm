@@ -24,7 +24,7 @@ JohtoGrassWildMons:
 	db 3, GASTLY
 	db 4, GASTLY
 	db 5, GASTLY
-	db 3, RATTATA
+	db 3, HOUNDOUR
 	db 6, GASTLY
 	db 5, RATTATA
 	db 5, RATTATA
@@ -52,7 +52,7 @@ JohtoGrassWildMons:
 	db 3, GASTLY
 	db 4, GASTLY
 	db 5, GASTLY
-	db 3, RATTATA
+	db 3, HOUNDOUR
 	db 6, GASTLY
 	db 5, RATTATA
 	db 5, RATTATA
@@ -304,7 +304,7 @@ JohtoGrassWildMons:
 	db 13, RATTATA
 	db 14, KOFFING
 	db 15, RATTATA
-	db 14, ZUBAT
+	db 14, HOUNDOUR
 	db 15, RATTATA
 	db 15, RATICATE
 	db 15, RATICATE
@@ -329,7 +329,7 @@ JohtoGrassWildMons:
 	db 16, KOFFING
 	db 16, WEEZING
 	; nite
-	db 14, RATTATA
+	db 14, HOUNDOUR
 	db 14, KOFFING
 	db 16, KOFFING
 	db 15, ZUBAT
@@ -1074,16 +1074,16 @@ JohtoGrassWildMons:
 	db 42, ONIX
 	db 45, MAGMAR
 	db 45, GOLBAT
-	db 20, LARVITAR
-	db 15, LARVITAR
+	db 35, LARVITAR
+	db 42, PUPITAR
 	; day
 	db 43, GRAVELER
 	db 44, URSARING
 	db 42, ONIX
 	db 45, MAGMAR
 	db 45, GOLBAT
-	db 20, LARVITAR
-	db 15, LARVITAR
+	db 35, LARVITAR
+	db 42, PUPITAR
 	; nite
 	db 43, GRAVELER
 	db 44, GOLBAT
@@ -1102,16 +1102,16 @@ JohtoGrassWildMons:
 	db 47, URSARING
 	db 46, PARASECT
 	db 48, PARASECT
-	db 15, LARVITAR
-	db 20, LARVITAR
+	db 35, LARVITAR
+	db 42, PUPITAR
 	; day
 	db 48, GOLBAT
 	db 48, MACHOKE
 	db 47, URSARING
 	db 46, PARASECT
 	db 48, PARASECT
-	db 15, LARVITAR
-	db 20, LARVITAR
+	db 35, LARVITAR
+	db 42, PUPITAR
 	; nite
 	db 48, GOLBAT
 	db 48, GOLDUCK
@@ -1125,21 +1125,21 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_ROOM_3
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 51, GOLBAT
+	db 51, OMASTAR
 	db 48, ONIX
 	db 48, GRAVELER
 	db 50, URSARING
-	db 20, LARVITAR
-	db 15, LARVITAR
-	db 20, PUPITAR
+	db 35, LARVITAR
+	db 42, PUPITAR
+	db 45, PUPITAR
 	; day
-	db 51, GOLBAT
+	db 51, KABUTOPS
 	db 48, ONIX
 	db 48, GRAVELER
 	db 50, URSARING
-	db 20, LARVITAR
-	db 15, LARVITAR
-	db 20, PUPITAR
+	db 35, LARVITAR
+	db 42, PUPITAR
+	db 45, PUPITAR
 	; nite
 	db 51, GOLBAT
 	db 48, ONIX
@@ -1322,17 +1322,17 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, EKANS
-	db 5, RATTATA
+	db 5, MAREEP
 	db 7, BELLSPROUT
 	db 6, HOPPIP
 	db 7, PIDGEY
-	db 7, HOPPIP
+	db 7, MAREEP
 	db 7, HOPPIP
 	; day
 	db 4, EKANS
-	db 5, RATTATA
+	db 5, MAREEP
 	db 7, BELLSPROUT
-	db 6, HOPPIP
+	db 6, MAREEP
 	db 7, PIDGEY
 	db 7, HOPPIP
 	db 7, HOPPIP
@@ -1482,7 +1482,7 @@ JohtoGrassWildMons:
 	db 15, HOOTHOOT
 	db 16, STANTLER
 	db 15, NOCTOWL
-	db 15, ARIADOS
+	db 15, MURKROW
 	db 15, ARIADOS
 	end_grass_wildmons
 
@@ -1509,7 +1509,7 @@ JohtoGrassWildMons:
 	db 16, RATICATE
 	db 16, MAGNEMITE
 	db 16, NOCTOWL
-	db 16, MEOWTH
+	db 16, MURKROW
 	db 16, MEOWTH
 	db 16, MEOWTH
 	end_grass_wildmons
@@ -1537,7 +1537,7 @@ JohtoGrassWildMons:
 	db 16, RATICATE
 	db 16, MAGNEMITE
 	db 16, NOCTOWL
-	db 18, MEOWTH
+	db 18, MURKROW
 	db 18, MEOWTH
 	db 18, MEOWTH
 	end_grass_wildmons
@@ -1546,16 +1546,16 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 13, EKANS
-	db 14, SPEAROW
-	db 15, RATTATA
+	db 14, FLAAFFY
+	db 15, FLAAFFY
 	db 16, RATICATE
 	db 15, ARBOK
 	db 16, FEAROW
 	db 16, FEAROW
 	; day
 	db 13, EKANS
-	db 14, SPEAROW
-	db 15, RATTATA
+	db 14, FLAAFFY
+	db 15, FLAAFFY
 	db 16, RATICATE
 	db 15, ARBOK
 	db 16, FEAROW
@@ -1578,7 +1578,7 @@ JohtoGrassWildMons:
 	db 16, FARFETCH_D
 	db 15, FURRET
 	db 17, RATICATE
-	db 17, FURRET
+	db 17, GIRAFARIG
 	db 17, FURRET
 	; day
 	db 15, SENTRET
@@ -1586,7 +1586,7 @@ JohtoGrassWildMons:
 	db 16, FARFETCH_D
 	db 15, FURRET
 	db 17, RATICATE
-	db 17, FURRET
+	db 17, GIRAFARIG
 	db 17, FURRET
 	; nite
 	db 15, VENONAT
@@ -1635,7 +1635,7 @@ JohtoGrassWildMons:
 	db 25, DONPHAN
 	db 20, PHANPY
 	db 27, SKARMORY
-	db 27, SKARMORY
+	db 20, LARVITAR
 	; day
 	db 23, GEODUDE
 	db 23, GRAVELER
@@ -1643,7 +1643,7 @@ JohtoGrassWildMons:
 	db 25, DONPHAN
 	db 30, DONPHAN
 	db 27, SKARMORY
-	db 27, SKARMORY
+	db 20, LARVITAR
 	; nite
 	db 23, GEODUDE
 	db 23, GRAVELER
@@ -1651,7 +1651,7 @@ JohtoGrassWildMons:
 	db 25, GRAVELER
 	db 27, GRAVELER
 	db 27, GRAVELER
-	db 27, GRAVELER
+	db 20, LARVITAR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_46
@@ -1691,7 +1691,7 @@ JohtoGrassWildMons:
 	db 44, RAPIDASH
 	db 41, DODUO
 	db 43, DODRIO
-	db 43, DODRIO
+	db 43, NINETALES
 	; day
 	db 41, TANGELA
 	db 42, PONYTA
@@ -1699,7 +1699,7 @@ JohtoGrassWildMons:
 	db 44, RAPIDASH
 	db 41, DODUO
 	db 43, DODRIO
-	db 43, DODRIO
+	db 43, NINETALES
 	; nite
 	db 41, TANGELA
 	db 42, POLIWHIRL

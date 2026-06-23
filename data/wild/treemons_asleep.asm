@@ -11,6 +11,7 @@ AsleepTreeMonsNite:
 	db EKANS
 	db EXEGGCUTE
 	db LEDYBA
+	db NATU
 	db AIPOM
 	db -1 ; end
 
@@ -19,6 +20,7 @@ AsleepTreeMonsDay:
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
+	db PINECO
 	db HERACROSS
 	db -1 ; end
 
@@ -27,5 +29,6 @@ AsleepTreeMonsMorn:
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
+	db PINECO
 	db HERACROSS
 	db -1 ; end

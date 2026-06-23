@@ -29,7 +29,7 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     KRABBY,     10
 .Shore_Good:
-	db  35 percent,     MAGIKARP,   20
+	db  35 percent,     HORSEA,   20
 	db  70 percent,     KRABBY,     20
 	db  90 percent + 1, KRABBY,     20
 	db 100 percent,     time_group 0
@@ -44,12 +44,12 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     TENTACOOL,  10
 .Ocean_Good:
-	db  35 percent,     MAGIKARP,   20
+	db  35 percent,     HORSEA,   20
 	db  70 percent,     TENTACOOL,  20
 	db  90 percent + 1, CHINCHOU,   20
 	db 100 percent,     time_group 2
 .Ocean_Super:
-	db  40 percent,     CHINCHOU,   40
+	db  40 percent,     HORSEA,   40
 	db  70 percent,     time_group 3
 	db  90 percent + 1, TENTACRUEL, 40
 	db 100 percent,     LANTURN,    40
@@ -199,13 +199,13 @@ FishGroups:
 .Remoraid_Good:
 	db  35 percent,     MAGIKARP,   20
 	db  70 percent,     POLIWAG,    20
-	db  90 percent + 1, POLIWAG,    20
+	db  90 percent + 1, REMORAID,   20
 	db 100 percent,     time_group 6
 .Remoraid_Super:
-	db  40 percent,     POLIWAG,    40
+	db  40 percent,     REMORAID,   40
 	db  70 percent,     time_group 7
 	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     REMORAID,   40
+	db 100 percent,     OCTILLERY,  40
 
 TimeFishGroups:
 	;  day              nite
