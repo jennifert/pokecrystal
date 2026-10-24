@@ -177,7 +177,7 @@ These need heavier testing because they touch balance.
 
 ### Milestone 6 — Encounter and economy polish
 
-- Rebalance fishing rods or add a new fishing rod.
+- Rebalance fishing rods.
 - Improve swarm system.
 - Rock Smash can contain items.
 - Improve level curve.
@@ -196,7 +196,6 @@ These ideas are currently outside the critical path for v1.
 - Regional forms.
 - Later-gen evolutions, such as Togekiss, Sylveon, Gliscor, etc.
 - More advanced trainer parties with DVs, stat EXP, nicknames, and variable teams.
-- Broader new move/type expansion beyond Fairy basics.
 - Add a trainer based on myself near the entrance to Victory Road.
   - Use the Pokéfan or Teacher trainer class.
   - Reuse an existing trainer battle if appropriate.
