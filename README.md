@@ -16,18 +16,24 @@ This project is currently in planning and early development. The roadmap below d
 - Improve the level curve and make team-building feel fairer throughout Johto and Kanto.
 - Keep the game single-player friendly while still feeling like Pokémon Crystal.
 
-## Test team
+## Test teams
 
-The main regression test team for this project is:
-
+Milestone 1:
 - Steelix
 - Typhlosion
-- Poliwrath
-- Wigglytuff
-- Crobat
-- Exeggutor
+- Togetic
+- Ampharos
+- Girafarig
+- Poliwag
 
-These Pokémon help test evolution methods, friendship, item evolutions, field utility, type changes, battle mechanics, and level-curve changes.
+The evolution team for this project is:
+
+- Umbreon
+- Typhlosion
+- Lapras
+- Wigglytuff
+- Scizor
+- Victreebel
 
 ## Planned roadmap
 
@@ -171,6 +177,11 @@ These ideas are currently outside the critical path for v1.
 - Later-gen evolutions, such as Togekiss, Sylveon, Gliscor, etc.
 - More advanced trainer parties with DVs, stat EXP, nicknames, and variable teams.
 - Broader new move/type expansion beyond Fairy basics.
+- Add a trainer based on myself near the entrance to Victory Road.
+  - Use the Pokéfan or Teacher trainer class.
+  - Reuse an existing trainer battle if appropriate.
+  - Use my favourite team with custom held items, movesets, and nicknames.
+  - Balance the battle for the pre-League point in the story.
 
 ## Upstream base
 
