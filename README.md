@@ -31,12 +31,15 @@ These Pokémon help test evolution methods, friendship, item evolutions, field u
 
 ## Planned roadmap
 
+- Add releases only when feature chunks are complete and tested.
+- Keep `v1.0` reserved for “complete dex + planned core features done.”
+
 ### Milestone 0 — Repo setup / base sync
 
 - Sync with upstream `pret/pokecrystal`.
 - Confirm clean build.
-- Add releases only when feature chunks are complete and tested.
-- Keep `v1.0` reserved for “complete dex + planned core features done.”
+
+COMPLETED
 
 ### Milestone 1 — Complete dex foundation
 
