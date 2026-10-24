@@ -128,6 +128,26 @@ These are player-facing wins and mostly safe if done carefully.
 - Move Relearner beside Move Deleter in Blackthorn City.
 - Add NPCs that give items / Pokémon where useful.
 
+#### Move updates and expansion
+
+Expand move options across multiple types and Pokémon.
+Review learnsets, TM compatibility, availability, and balance.
+Reuse existing animations and effects where practical.
+
+Moves under consideration:
+- Scale Shot — Dragon-type multi-hit attack.
+- Drain Punch — Fighting-type draining attack.
+- Water Pulse — Water-type attack with a confusion chance.
+- Magnet Rise — temporary Ground immunity.
+- Aerial Ace — Flying-type attack that bypasses accuracy checks.
+- Dual Wingbeat — Flying-type two-hit attack.
+- Flip Turn — Water-type attack that switches the user out.
+- Volt Switch — Electric-type attack that switches the user out.
+
+Decide separately which moves use new slots or replace existing moves.
+Soul Yellow's replacement choices are references, not final decisions
+for Crystal.
+
 ### Milestone 4 — Battle/mechanics updates
 
 These need heavier testing because they touch balance.
