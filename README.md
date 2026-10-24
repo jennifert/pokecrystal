@@ -159,6 +159,7 @@ These need heavier testing because they touch balance.
 - Add Lucky Egg and Shiny Charm, including acquisition events.
 - Add Mom menu option: heal Pokémon or receive one daily message.
 - Fix Mom’s Pokégear tutorial dialogue so she does not explain it after the player says they already know how to use it.
+- Allow deletion of normally undeletable Pokégear phone contacts.
 - Make stationary legends resettable by beating the Elite Four if missed or KO’d.
 - Improve shiny odds for wild/static encounters while making Red Gyarados DVs less fixed.
 
