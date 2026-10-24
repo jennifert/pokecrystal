@@ -814,7 +814,7 @@ ShrinkPlayer:
 	ld de, SFX_ESCAPE_ROPE
 	call PlaySFX
 	pop af
-	rst Bankswitch
+	rst Bankswitch ; pointless (and not allowed outside Home bank)
 
 	ld c, 8
 	call DelayFrames
@@ -1331,9 +1331,9 @@ GameInit::
 	call ClearWindowData
 	call ClearBGPalettes
 	call ClearTilemap
-	ld a, HIGH(vBGMap0)
+	ld a, HIGH(vTilemap0)
 	ldh [hBGMapAddress + 1], a
-	xor a ; LOW(vBGMap0)
+	xor a ; LOW(vTilemap0)
 	ldh [hBGMapAddress], a
 	ldh [hJoyDown], a
 	ldh [hSCX], a
