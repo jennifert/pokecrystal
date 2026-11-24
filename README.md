@@ -40,11 +40,11 @@ Examples include:
 - Making Houndour, Murkrow, Larvitar, and other Johto Pokémon accessible earlier.
 - Adding Horsea to Good Rod encounters before Clair.
 - Expanding Headbutt, fishing, and Bug-Catching Contest encounters.
-- Introducing Kanto starters in wild locations inspired by *Pokémon: Let's Go, Pikachu!* and *Let's Go, Eevee!*.
+- Introducing Kanto starters in wild locations inspired by **Pokémon: Let's Go, Pikachu!** and **Let's Go, Eevee!**.
 - Relocating Pokémon associated with inaccessible original Kanto areas until those maps are restored.
 - Restoring special encounters and legendary events over subsequent versions.
 
-A future availability audit will document each Pokémon's location, encounter method, time restrictions, and version requirements.
+After the Milestone 6 encounter audit, Milestone 7 will document each Pokémon's location, encounter method, time restrictions and version availability. This documentation will not claim unobtainable species are present in Version 1.
 
 ## Development and testing
 
@@ -59,22 +59,22 @@ Changes are developed and tested in manageable chunks.
 
 ### Current implementation status
 
-The following foundations have been committed to the repository:
+The following foundations are committed to the repository, although not all have finished full-playthrough verification:
 
-- Initial upstream synchronization and local build setup.
-- Fairy-type groundwork, including type data, selected moves, and Pokémon typings.
-- Corrected Normal/Fairy typing for Wigglytuff.
-- Reworked EXP Share as a toggleable Key Item.
-- Added experience gain from catching Pokémon.
-- Added Horsea to Good Rod encounters.
-- Updated Remoraid fishing encounters.
-- Expanded the Bug-Catching Contest with more Generation II Pokémon.
-- Updated selected Johto and Kanto wild encounters.
-- Expanded some Headbutt encounter groups.
-- Updated the in-game Onix trade so Rocky holds Metal Coat.
-- Changed the Lottery Corner's former EXP Share prize to Lucky Egg.
+- Initial upstream synchronization and successful local build.
+- Fairy-type groundwork, selected move data and Pokémon typings, including Normal/Fairy Wigglytuff.
+- EXP Share reworked into a toggleable Key Item, with catching EXP implemented.
+- Horsea added to Good Rod fishing groups and Remoraid encounter groups improved.
+- Bug-Catching Contest updated with more Generation II Pokémon.
+- Selected Johto/Kanto grass and Headbutt encounters updated.
+- Rocky's in-game Onix trade updated to hold Metal Coat, with an item-use evolution fix **implemented, tested, and closed** (Issue #3).
+- Dragon Scale changed to support direct Seadra → Kingdra evolution; broader acquisition and regression tests remain outstanding.
+- Goldenrod Radio Tower lottery second prize changed from EXP Share to Lucky Egg, pending a further planned reward shuffle.
+- Existing Mew and Celebi Pokédex data checked and the data-verification issue **closed** (Issue #8); their actual encounters are future work.
 
-These changes require continued gameplay verification before being considered fully complete.
+**Current testing:** Milestone 1 fresh-save regression is in progress (Issue #9). A clean build, new save, and New Bark Town through Violet City have been checked. Johto, Kanto and full-playthrough checks remain open. See the [Milestone 1 test issue](https://github.com/jennifert/pokecrystal/issues/9) and associated feature issues.
+
+Implemented code, tested behaviour, and future intentions are tracked separately. A closed issue does not imply that every related feature has been fully expanded or released.
 
 ### Test teams
 
@@ -98,7 +98,7 @@ These changes require continued gameplay verification before being considered fu
 
 Test teams may change as new features are implemented.
 
----
+**---**
 
 # Release roadmap
 
@@ -127,44 +127,42 @@ Version 1 is divided into seven development milestones.
 
 **Status: Code committed; regression testing in progress**
 
-This milestone verifies the initial encounter, Fairy-type, and experience-system changes.
+This milestone verifies the initial encounter, Fairy-type, evolution groundwork, and experience-system changes.
 
 #### Encounter changes
 
 - Remove selected version-exclusive restrictions.
-- Improve Johto Pokémon availability.
-- Add Houndour, Murkrow, Mareep, and other species to suitable earlier locations.
-- Add Horsea to Good Rod encounters.
-- Improve Remoraid fishing groups.
-- Replace selected Bug-Catching Contest encounters with Generation II Pokémon.
-- Expand Headbutt encounters.
-- Add selected missing Kanto Pokémon to existing locations.
+- Improve Johto Pokémon availability, including earlier Houndour, Murkrow, Mareep, and selected other species.
+- Add Horsea to Good Rod encounters; improve Remoraid fishing groups.
+- Update selected Bug-Catching Contest encounters to use Generation II Pokémon.
+- Expand selected Headbutt encounters and add some missing Kanto species to existing locations.
 
 #### Mechanics
 
-- Add Fairy-type groundwork.
-- Update selected Pokémon to their modern Fairy typings.
-- Update selected Fairy-type moves and type interactions.
+- Add Fairy-type groundwork, modern typings for selected Pokémon, and relevant type/move interactions.
 - Rework EXP Share into a toggleable Key Item.
-- Add catching experience.
-- Update Rocky's held item to Metal Coat.
+- Award EXP for successful captures, but not for failed catches.
+- Support Rocky's Metal Coat evolution by item use; Issue #3 is fixed and closed.
+- Verify the existing Mew/Celebi Pokédex records; Issue #8 is closed (encounters are separate future work).
 
 #### Testing
 
-- Verify the revised wild encounter tables.
-- Test Bug-Catching Contest and fishing encounters.
-- Test EXP Share with the setting enabled and disabled.
-- Test catching experience, including level-ups and move learning.
-- Verify Fairy-type interactions.
-- Test Rocky's in-game trade.
-- Verify Mew and Celebi's existing Pokédex data.
-- Perform a fresh-save regression playthrough.
+- [x] Confirm the local build and start a fresh-save playthrough.
+- [x] Test progression from New Bark Town through Violet City.
+- [x] Test and close Rocky's Metal Coat evolution issue (#3).
+- [x] Verify Mew/Celebi Pokédex data (#8).
+- [ ] Continue the full Johto and Kanto playthrough, including Red (#9).
+- [ ] Verify revised wild encounters, Contest encounters and fishing groups (#2, #4).
+- [ ] Test EXP Share distribution/toggle and catching EXP in all relevant cases (#5, #6).
+- [ ] Confirm EXP awarded after a successful capture can correctly trigger level-ups and move-learning prompts (#6).
+- [ ] Finish testing Fairy-type interactions (#7).
+- [ ] Retest saving, loading, story events and other regression cases.
 
-Track progress using the [Milestone 1 GitHub Issues](https://github.com/jennifert/pokecrystal/issues?q=is%3Aopen%20milestone%3A%22Milestone%201%22).
+Track current results in [Milestone 1 GitHub Issues](https://github.com/jennifert/pokecrystal/issues?q=is%3Aopen%20milestone%3A%22Milestone%201%22). Later quality-of-life and balance observations are recorded for their scheduled milestones rather than treated as Milestone 1 blockers.
 
 ### Milestone 2 — Evolution and trade fixes
 
-**Status: Planned; Dragon Scale changes under initial testing**
+**Status: Planned; Rocky/Metal Coat tested, Dragon Scale code committed and other evolutions pending**
 
 Remove external trade requirements from evolution methods.
 
@@ -188,9 +186,9 @@ Allow evolution items to be used directly from the Bag, similarly to evolution s
 - Seadra + Dragon Scale → Kingdra
 - Porygon + Up-Grade → Porygon2
 
-Dragon Scale is the initial test case.
+Rocky's Metal Coat item-use evolution has already been implemented and tested. Dragon Scale item-use support is also in code, but Kingdra acquisition and other evolution cases still need gameplay testing.
 
-Horsea should evolve into Seadra at Level 32, after which Dragon Scale can evolve Seadra directly into Kingdra without trading.
+Horsea evolves into Seadra at Level 32; Dragon Scale should then evolve Seadra directly into Kingdra without trading.
 
 Dragon Scale must be obtainable before challenging Clair.
 
@@ -233,67 +231,61 @@ Implement essential gameplay conveniences.
 
 - Infinitely reusable TMs.
 - Display move names when receiving or purchasing TMs and HMs.
-- Allow Pokémon to use field moves they are capable of learning without occupying a move slot, while preserving progression requirements.
+- Allow compatible Pokémon to perform field moves without occupying move slots, while retaining badge/story progression restrictions.
 - Add Running Shoes.
 - Add a free Move Relearner near the Move Deleter in Blackthorn City.
 - Remove overworld poison damage.
-- Prevent unnecessary EXP gain calculations at Level 100.
-- Make essential evolution and training items more accessible.
+- Avoid unnecessary EXP calculations for Level 100 Pokémon.
+- Improve access to essential evolution and training items.
 
-The Pocket PC, expanded Options interface, and other significant menu changes are reserved for Version 1.5.
+#### Early-game rewards and item redistribution
+
+Rearrange existing gift rewards without changing the basic early-game story:
+
+- **Show Togepi/Togetic to Professor Elm:** receive the toggleable **EXP Share Key Item** instead of Everstone.
+- **Mom, after Falkner:** receive a one-time **Everstone** gift, gated by the Zephyr Badge/defeating Falkner.
+- **Elm's aide/scientist:** retain his original gift of **five Poké Balls**.
+- **Mr. Pokémon's Red Scale exchange:** receive **Lucky Egg** instead of EXP Share.
+- **Goldenrod Radio Tower lottery, second prize:** replace the current Lucky Egg reward with **Scope Lens**.
+- Update NPC text, one-time event flags and checks for a full Bag. Verify rewards survive saving/loading and cannot be duplicated unintentionally.
+
+**Important:** These reward changes are *planned*, not implemented in the current playable build. For now, Elm still gives Everstone for Togepi, Mr. Pokémon gives EXP Share for the Red Scale, and the lottery awards Lucky Egg as second prize.
+
+The expanded Bag, Pocket PC, substantial Options changes and saving-system changes are reserved for Version 1.5.
 
 ### Milestone 4 — Moves and battle mechanics
 
 **Status: Planned**
 
-Modernize the original Pokémon's movesets and selected battle mechanics.
+Review original moves, learnsets and move-slot use before introducing new moves. Check power, accuracy, PP, typing, level-up timing, Egg Moves, TM/HM compatibility, evolution moves and species-specific coverage.
 
-#### Move updates
+#### Early learnset improvements
 
-Review:
+- **Cyndaquil:** learn an early Fire-type attack such as Ember around Level 6, before Smokescreen.
+- **Totodile:** learn Water Gun around Level 6–7, before Rage.
+- **Chikorita:** receive an earlier Grass-type attack, provisionally Razor Leaf around Level 6; assess balance against the opening Gyms.
+- **Togepi:** hatch with a dependable damaging move instead of redundant Growl/Charm support only. Preferred option is to **replace Growl with Disarming Voice** (proposed 40-power Fairy move); **Swift** (60-power Normal move) remains the fallback if the new Fairy move or its balance is not ready. Keep Charm for support and Metronome at Level 7.
+- Review Togetic's starting moves and other baby Pokémon that hatch without useful attacks.
+- Test newly hatched Pokémon, learnset ordering, existing saves and move-learning prompts.
 
-- Move power and accuracy.
-- PP values.
-- Move typing.
-- Level-up learnsets.
-- Egg Moves.
-- TM/HM compatibility.
-- Evolution moves.
-- Species-specific move availability.
+#### Move-slot and moveset review
 
-Potential new or repurposed moves include:
-
-- Sticky Web, replacing Spider Web.
-- Facade, proposed as a replacement for Fury Swipes.
-- Fury Attack replacement, still undecided.
-- Scale Shot.
-- Drain Punch.
-- Water Pulse.
-- Magnet Rise.
-- Aerial Ace.
-- Dual Wingbeat.
-- Flip Turn.
-- Volt Switch.
-
-Modernize existing moves such as Fury Cutter, Leech Life, and other outdated attacks.
-
-Keep Mean Look as a trapping move.
-
-New move effects require separate testing and must fit within the available move slots.
+- **Spider Web → Sticky Web:** repurpose Spider Web's move slot as a Bug-type entry hazard (proposed 20 PP). Grounded opponents switching in lose one Speed stage; Flying-type Pokémon are unaffected. Rapid Spin should clear webs on the user's side. Retain Mean Look as the trapping move; review original Spinarak/Ariados learners and other appropriate species.
+- **Fury Swipes → Facade:** proposed replacement, not yet finalized; update affected learnsets if adopted.
+- **Fury Attack:** on the removal/replacement shortlist, with no replacement chosen yet.
+- **Fury Cutter:** keep and modernize; do not confuse with Fury Swipes or Fury Attack.
+- Consider other modern attacks (such as Scale Shot, Drain Punch, Water Pulse, Magnet Rise, Aerial Ace, Dual Wingbeat, Flip Turn and Volt Switch) as available move slots and engine support permit.
+- Modernize weak/outdated existing moves, including Leech Life, while preserving distinctive original moves where useful.
 
 #### Battle mechanics
 
-- Complete the modern Fairy-type chart.
-- Update outdated Ghost and Dark interactions against Steel.
-- Correct the Dragon Fang and Dragon Scale type-boost behaviour.
-- Modernize sleep and thaw mechanics.
-- Reduce confusion's self-hit probability.
-- Fix Steel-type poisoning from Twineedle.
-- Add appropriate Grass-type immunities to powder-based moves.
-- Add evolution moves.
-- Review other documented Generation II battle-mechanics bugs.
+- Complete and test the modern Fairy-type chart.
+- Correct outdated Ghost/Dark vs Steel interactions and Dragon Fang/Dragon Scale type-boost behaviour.
+- Modernize sleep and thaw rules; reduce confusion self-hit chance.
+- Fix Steel-type poisoning from Twineedle and add appropriate Grass-type powder immunities.
+- Review evolution moves and documented Generation II mechanics bugs.
 
-Weather modernization is reserved for Version 8.
+Every new effect needs focused regression tests. Weather modernization remains reserved for Version 8.
 
 ### Milestone 5 — Events and Pokémon availability
 
@@ -326,22 +318,32 @@ The Mew truck event and larger restored Kanto areas are planned for later releas
 
 **Status: Planned**
 
-Improve the original Normal Mode experience.
+Improve the original **Normal Mode** experience without using the full Challenge Mode systems planned for Version 3.
 
-- Rework Johto Gym Leader teams.
-- Review Kanto Gym Leader teams.
-- Improve ordinary trainer Pokémon variety.
-- Reduce repetitive Pidgey, Spearow, Caterpie, Weedle, and similar teams.
-- Add more varied Bug-type teams, including appropriate evolved Pokémon.
-- Improve Team Rocket's Pokémon variety.
-- Adjust trainer levels to match the intended level curve.
-- Improve encounter rarity and availability.
-- Review item and money rewards.
-- Improve shiny availability where appropriate.
-- Revisit Red Gyarados's fixed DVs.
-- Improve swarms and encounter diversity.
+#### Trainers and level curve
 
-The full six-Pokémon Challenge Mode teams and advanced difficulty features will be introduced in Version 3.
+- Rebalance Johto and Kanto Gym Leaders, ordinary trainers, Team Rocket, and item/money rewards.
+- Reduce repeated Pidgey, Spearow, Caterpie, Weedle and similar trainer teams; give Bug Catchers more species and appropriate evolved Pokémon (such as Scyther, Pinsir, Heracross and later Scizor).
+- Review early-game balance with Chikorita and readily obtainable Rock-, Ground- and Normal-type support Pokémon.
+- **Falkner proposal:** raise Pidgey from Level 7 to approximately Level 10 and Pidgeotto from Level 9 to approximately Level 12; retain thematic Flying-type moves, Gust and Mud-Slap as appropriate. This is a balancing proposal, not an implemented change.
+- Review trainer levels through Johto/Kanto and improve swarm availability and shiny-related mechanics where appropriate; revisit Red Gyarados's fixed DVs.
+
+#### Full wild-encounter audit
+
+After the initial Milestone 1 availability changes, review **every encounter method** across Johto and Kanto: grass, time-of-day/day-of-week changes, fishing, Surf, Headbutt, Rock Smash, swarms and special encounters. Compare appropriate GSC/HGSS placements, expand variety, reduce repetitive duplicates, and preserve early access to species such as Phanpy while improving places such as Route 46.
+
+#### Fishing progression overhaul
+
+The current fishing file already has targeted changes (notably Good Rod Horsea and revised Remoraid groups), but a full three-rod redesign is **not yet implemented**.
+
+- **Old Rod:** more varied, low-level, generally unevolved fish and aquatic Pokémon rather than overwhelming Magikarp repetition.
+- **Good Rod:** a broader pool of stronger unevolved species and suitable middle-stage evolutions.
+- **Super Rod:** the widest pool, with rare catches and appropriate evolved Pokémon such as Kingler, Seaking or Tentacruel where they make sense.
+- Preserve rare unevolved species on stronger rods when desirable; do not require all Super Rod encounters to be fully evolved.
+- Balance levels and encounter rates by habitat, location, time and progression. Preserve **Horsea with the Good Rod before Clair**.
+- Test each rod in every relevant fish group, including swarm/time-dependent tables.
+
+The complete final Pokémon encounter/location guide will be written **after** this audit, during Milestone 7. Advanced six-Pokémon Gym teams and Challenge Mode AI changes remain scheduled for Version 3.
 
 ### Milestone 7 — Version 1 release testing
 
@@ -358,12 +360,13 @@ Complete a fresh-save playthrough and verify the Version 1 feature set.
 - Test Celebi's restored event.
 - Test save/load functionality.
 - Review unexpected softlocks and event conflicts.
-- Document unavailable species and features deferred to later releases.
+- After Milestone 6, publish a verified species-by-species encounter guide (planned `docs/pokemon-locations.md`) covering location, method, time restrictions and any unavailable species.
+- Document other features deferred to later releases.
 - Update the README and release notes.
 
 **Version 1 will be considered ready when its included features are stable and tested, not when all future planned Pokémon and content have been added.**
 
----
+**---**
 
 ## Version 1.5 — Legacy cleanup and Options foundations
 
@@ -438,28 +441,39 @@ Potential sources:
 
 Introduce a visible difficulty setting:
 
-- Normal Mode — default.
-- Challenge Mode — selectable, with full gameplay differences arriving in Version 3.
+- **Normal Mode:** default.
+- **Challenge Mode:** selectable in Options, with the full difficulty differences arriving in Version 3.
 
-Players may switch difficulty through Options during normal gameplay.
+Players may switch difficulty during normal play. Until Version 3, the Challenge setting may temporarily use the Normal trainer data. Plan the save-data and Options architecture with future expansion in mind.
 
-Initially, both settings may use Normal Mode trainer data until Challenge Mode is implemented.
+#### Expanded Bag and storage
 
-Reserve suitable saved settings and plan future save-format changes early.
+- Expand item capacity beyond the original small pocket limits; consider separate Item, Medicine, Berry, Apricorn, Ball, Key Item and TM/HM categories.
+- Audit the Bag, PC storage, item constants, menus and save structures before changing pocket definitions.
+- Add portable Pocket PC access if feasible without undermining existing PCs.
+- Keep bag/PC item moves, sorting, item use and save compatibility safe.
 
-Additional improvements:
+#### Saving and New Game safety
 
-- Expand Pokégear phone capacity so all available trainer contacts can be retained.
-- Preserve the ability to remove unwanted contacts.
-- Improve swarm notifications with visible on-screen alerts.
-- Add Pocket PC access.
-- Simplify clock reset.
-- Remove artificial saving delays.
-- Add a fourth Pokémon stats page.
-- Add a third Trainer Card page for Kanto badges.
-- Improve Gym Leader portraits on the Trainer Card.
-- Add a small clock to the menu.
-- Review the default player and rival names.
+- Remove artificial saving pauses and redundant confirmation/overwrite prompts: one clear confirmation to save in normal circumstances.
+- When selecting **New Game** while another save exists, present a clear warning before starting; do not erase the old save merely by entering New Game. Replacement should happen only when the new game is actually saved, with appropriate safeguards.
+- Test save integrity, old/new trainer IDs, interruptions and overwrite behaviour.
+
+#### Pokégear, swarms and interface
+
+- Expand Pokégear phone capacity so every obtainable trainer number can be stored; retain the ability to delete unwanted contacts.
+- Display short on-screen swarm alerts rather than relying only on phone calls; account for swarms that begin without a call.
+- Fix Mom's phone tutorial so answering that the player already knows how to use the phone doesn't repeat the full explanation.
+- Simplify clock reset and add a small menu clock where practical.
+- Add a fourth Pokémon stats page, a third Trainer Card page showing Kanto badges, and improved Gym Leader portraits.
+- Review player and rival default names and other legacy dialogue/menus.
+
+#### Traded Pokémon obedience
+
+- Raise the starting outsider/traded Pokémon obedience threshold from the original Level 10 to **Level 15**.
+- Explore modern-style behaviour where a Pokémon received within the current obedience limit continues to obey as it levels up, even after evolving; this requires tracking the appropriate received-level data and checking save compatibility.
+- Preserve the existing higher badge-based obedience thresholds unless separately revised.
+- Keep **traded-Pokémon obedience distinct from Challenge Mode level caps**. Rocky is a useful regression case.
 
 ---
 
@@ -501,7 +515,7 @@ Add portable Move Reminder and Move Deleter functionality where feasible.
 - Expand shop inventory capacity.
 - Add convenient methods of obtaining PP Ups.
 - Improve access to evolution stones and held items.
-- Consider a reusable Escape Rope Key Item.
+- Add a **reusable Escape Rope Key Item**, granted early enough to help before Union Cave; usable without consumption in locations where Escape Rope would normally work.
 
 ### Other improvements
 
@@ -526,7 +540,7 @@ These rules should be checked when evolution occurs, so changing difficulty does
 
 Sylveon and its proposed Shiny Stone evolution are deferred until the expanded Pokédex supports Sylveon.
 
----
+**---**
 
 ## Version 3 — Challenge Mode and trainer improvements
 
@@ -544,18 +558,18 @@ Planned features include:
 - Enhanced rival battles.
 - Improved trainer rematches.
 - More varied ordinary trainer teams.
-- Optional level caps.
+- Optional Challenge Mode level caps (no level cap in Normal Mode). Tentative early ace-level caps: **12 before Falkner, 16 before Bugsy, 20 before Whitney**, subject to balance testing. Check catching EXP, Exp. Share and candy interactions with the cap.
 - Difficulty-specific badge boost behaviour.
 - Set battle style as the Challenge Mode default.
 - More strategic Pokémon usage without requiring a full Abilities system.
 
 Review the artificial AI status-move failure chance and other outdated AI restrictions.
 
-Difficulty changes should apply to future battles, not alter battles already underway.
+Difficulty changes should apply to future battles, not alter battles already underway. Level caps apply to the entire party in Challenge Mode and are **separate** from the Version 1.5 outsider/traded Pokémon obedience thresholds.
 
 Additional story progression changes, including possible League-access adjustments, require separate design decisions.
 
----
+**---**
 
 ## Version 4 — Pokémon personality and world interactions
 
@@ -573,7 +587,7 @@ Add dialogue and environmental interactions that give Pokémon and locations mor
 
 Keep these additions optional and avoid interfering with core progression.
 
----
+**---**
 
 ## Version 5 — Restored Kanto maps and legendary encounters
 
@@ -611,7 +625,7 @@ Additional content:
 - Update the Town Map and relevant navigation.
 - Rebalance Pokémon availability as restored locations become accessible.
 
----
+**---**
 
 ## Version 6 — Expanded Pokédex and additional forms
 
@@ -647,7 +661,7 @@ The expanded species and form systems must be stable before these additions are 
 
 Classic Edition retains canonical species typings. Alternative Mega-inspired typings belong to a separate Variant Edition.
 
----
+**---**
 
 ## Version 7 — Mom's gifts, Eggs, and home improvements
 
@@ -667,7 +681,7 @@ Expand useful rewards and family interactions.
 
 Rewards should be tied to meaningful progress rather than requiring excessive random calls or repeated interactions.
 
----
+**---**
 
 ## Version 8 — Modern weather and held-item mechanics
 
@@ -732,7 +746,7 @@ After weather modernization, a Snow-setting Pokémon could use Snowscape and hol
 
 Challenge Mode may use a more advanced weather-based team.
 
----
+**---**
 
 # Future editions
 
@@ -769,7 +783,7 @@ Potential changes:
 
 Both editions remain outside the immediate Classic development schedule.
 
----
+**---**
 
 ## Upstream base
 
@@ -781,7 +795,7 @@ The original upstream project builds the following ROMs:
 - Pokemon - Crystal Version (UE) (V1.1) [C][!].gbc `sha1: f2f52230b536214ef7c9924f483392993e226cfb`
 - Pokemon - Crystal Version (A) [C][!].gbc `sha1: a0fc810f1d4e124434f7be2c989ab5b5892ddf36`
 - CRYSTAL_ps3_010328d.bin `sha1: c60d57a24bbe8ecf7cba54ab3f90669f97bd330d`
-- CRYSTAL_ps3_us_revise_010710d.bin `sha1: 391ae86b1d5a26db712ffe6c28b1867df330d`
+- CRYSTAL_ps3_us_revise_010710d.bin `sha1: 391ae86b1d5a26db712ffe6c28bbf2a1f804c3c4`
 - CGBBYTE1.784.patch `sha1: a25517f60ca0e887d39ec698aa56a0040532a4b3`
 
 To set up the repository, see [INSTALL.md](INSTALL.md).
@@ -811,9 +825,15 @@ This project is not affiliated with or endorsed by these companies.
 No copyrighted ROM files are included or distributed in this repository.
 
 [pret]: https://pret.github.io/
+
 [upstream]: https://github.com/pret/pokecrystal
+
 [docs]: https://pret.github.io/pokecrystal/
+
 [wiki]: https://github.com/pret/pokecrystal/wiki
+
 [tutorials]: https://github.com/pret/pokecrystal/wiki/Tutorials
+
 [symbols]: https://github.com/pret/pokecrystal/tree/symbols
+
 [tools]: https://github.com/pret/gb-asm-tools
