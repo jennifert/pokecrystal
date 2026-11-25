@@ -72,7 +72,7 @@ The following foundations are committed to the repository, although not all have
 - Goldenrod Radio Tower lottery second prize changed from EXP Share to Lucky Egg, pending a further planned reward shuffle.
 - Existing Mew and Celebi Pokédex data checked and the data-verification issue **closed** (Issue #8); their actual encounters are future work.
 
-**Current testing:** Milestone 1 fresh-save regression is in progress (Issue #9). A clean build, new save, and New Bark Town through Violet City have been checked. Johto, Kanto and full-playthrough checks remain open. See the [Milestone 1 test issue](https://github.com/jennifert/pokecrystal/issues/9) and associated feature issues.
+**Current testing:** Milestone 1 fresh-save regression is in progress (Issue #9), with playthrough progress through Goldenrod City. The revised Bug-Catching Contest has been verified in gameplay (Issue #2), and several Fairy-type checks are complete (Issue #7). Further Johto/Kanto progression and full-playthrough checks remain open. See the [Milestone 1 test issue](https://github.com/jennifert/pokecrystal/issues/9) and associated feature issues.
 
 Implemented code, tested behaviour, and future intentions are tracked separately. A closed issue does not imply that every related feature has been fully expanded or released.
 
@@ -152,11 +152,15 @@ This milestone verifies the initial encounter, Fairy-type, evolution groundwork,
 - [x] Test and close Rocky's Metal Coat evolution issue (#3).
 - [x] Verify Mew/Celebi Pokédex data (#8).
 - [ ] Continue the full Johto and Kanto playthrough, including Red (#9).
-- [ ] Verify revised wild encounters, Contest encounters and fishing groups (#2, #4).
+- [x] Verify all 11 regular revised Bug-Catching Contest species appear and the contest ends normally (#2).
+- [ ] Verify remaining revised wild encounters, Headbutt and fishing groups (#2, #4).
 - [ ] Test EXP Share distribution/toggle and catching EXP in all relevant cases (#5, #6).
 - [ ] Confirm EXP awarded after a successful capture can correctly trigger level-ups and move-learning prompts (#6).
-- [ ] Finish testing Fairy-type interactions (#7).
+- [x] Verify Poison and Steel are super effective against Fairy, and Fairy resists Fighting, Bug and Dark (#7).
+- [ ] Finish other Fairy-type checks: Pokémon types, evolution typing, Dragon immunity, and Fairy typing of Charm, Sweet Kiss and Moonlight (#7).
 - [ ] Retest saving, loading, story events and other regression cases.
+
+**Bug-Catching Contest playtest (24 November 2026):** 96 recorded encounters across all 11 regular species: Ledyba 30, Spinarak 17, Venonat 13, Pineco 7, Beedrill 6, Heracross 6, Butterfree 5, Paras 5, Pinsir 3, Scyther 3 and Yanma 1. The contest ended correctly when Park Balls ran out; the player placed second. These are *observed encounter counts*, not the programmed encounter probabilities. Contest availability is verified; encounter-rate balancing remains for Milestone 6.
 
 Track current results in [Milestone 1 GitHub Issues](https://github.com/jennifert/pokecrystal/issues?q=is%3Aopen%20milestone%3A%22Milestone%201%22). Later quality-of-life and balance observations are recorded for their scheduled milestones rather than treated as Milestone 1 blockers.
 
@@ -194,7 +198,7 @@ Dragon Scale must be obtainable before challenging Clair.
 
 #### Evolution-item merchant
 
-Add an evolution-item shop in Blackthorn City, accessible immediately upon reaching the city.
+Add an evolution-item shop in Blackthorn City, accessible immediately upon reaching the city. **Keep Blackthorn's Move Deleter available during Milestone 2** and repurpose that NPC only after Milestone 3 implements and tests ordinary HM move forgetting/replacement.
 
 Planned inventory:
 
@@ -233,10 +237,22 @@ Implement essential gameplay conveniences.
 - Display move names when receiving or purchasing TMs and HMs.
 - Allow compatible Pokémon to perform field moves without occupying move slots, while retaining badge/story progression restrictions.
 - Add Running Shoes.
-- Add a free Move Relearner near the Move Deleter in Blackthorn City.
+- Add a **free Move Reminder through Pokémon PCs**, not a separate NPC. Include eligible Level 1/evolution-only moves; allow ordinary move replacement and HM deletion once tested.
+- Retire or repurpose Blackthorn's Move Deleter only when Pokémon can forget/replace HM moves without that NPC.
 - Remove overworld poison damage.
 - Avoid unnecessary EXP calculations for Level 100 Pokémon.
 - Improve access to essential evolution and training items.
+
+#### Early Flash, Fly and Mud-Slap progression
+
+**Planned for Milestone 3; not available in the current build.** Separate early *field travel* from later *battle move use* to avoid overpowering the first Gyms.
+
+- **Sprout Tower Elder Li:** retain HM05 Flash; defeating him unlocks Flash outside battle without a Gym badge.
+- **Falkner:** award HM02 Fly instead of TM31 Mud-Slap; the Zephyr Badge permits field Fly to previously visited destinations (no Storm Badge required), using eligible Pokémon.
+- **Violet City Mart:** sell TM31 Mud-Slap.
+- **Before Jasmine's Lighthouse medicine request:** Fly works for field travel only and cannot be taught as a battle move, avoiding unusable battle moveslots.
+- **Jasmine requests medicine for Amphy:** unlock teaching and using Fly in battle through existing `EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS`, before Chuck's Gym.
+- Update Falkner, Elder Li and Chuck's wife's dialogue; test eligible Pokémon, Fly-point and story restrictions, event flags, saving/loading and full-Bag gifts. Chuck's wife's replacement gift is planned for Version 1.5.
 
 #### Early-game rewards and item redistribution
 
@@ -264,7 +280,9 @@ Review original moves, learnsets and move-slot use before introducing new moves.
 - **Cyndaquil:** learn an early Fire-type attack such as Ember around Level 6, before Smokescreen.
 - **Totodile:** learn Water Gun around Level 6–7, before Rage.
 - **Chikorita:** receive an earlier Grass-type attack, provisionally Razor Leaf around Level 6; assess balance against the opening Gyms.
-- **Togepi:** hatch with a dependable damaging move instead of redundant Growl/Charm support only. Preferred option is to **replace Growl with Disarming Voice** (proposed 40-power Fairy move); **Swift** (60-power Normal move) remains the fallback if the new Fairy move or its balance is not ready. Keep Charm for support and Metronome at Level 7.
+- **Togepi:** hatch with a dependable damaging move instead of redundant Growl/Charm support only. Preferred option is to **replace Growl with Disarming Voice** (proposed 40-power Fairy move); **Swift** (60-power Normal move) remains the fallback if the new Fairy move or its balance is not ready. Keep Charm for support and Metronome at Level 7. Propose increasing Metronome from 10 to **20 PP** after balance testing.
+- **Zubat:** replace its initial weak Leech Life with Absorb at Level 1, modernize Leech Life to 80 power and move it later in the Zubat/Golbat/Crobat line (around Level 30–35, subject to balance).
+- **Jynx:** add Psychic as a **Level 1, Move Reminder-only** option after evolution. Keep Smoochum's current learnset and Level 30 evolution unchanged; this uses the Milestone 3 PC Move Reminder.
 - Review Togetic's starting moves and other baby Pokémon that hatch without useful attacks.
 - Test newly hatched Pokémon, learnset ordering, existing saves and move-learning prompts.
 
@@ -276,6 +294,7 @@ Review original moves, learnsets and move-slot use before introducing new moves.
 - **Fury Cutter:** keep and modernize; do not confuse with Fury Swipes or Fury Attack.
 - Consider other modern attacks (such as Scale Shot, Drain Punch, Water Pulse, Magnet Rise, Aerial Ace, Dual Wingbeat, Flip Turn and Volt Switch) as available move slots and engine support permit.
 - Modernize weak/outdated existing moves, including Leech Life, while preserving distinctive original moves where useful.
+- **Fly:** raise from Crystal's current 70 power to modern **90 power** in Milestone 4, after the Milestone 3 Lighthouse battle-use unlock is working; early travel-only Fly must not provide a powerful attack before Bugsy.
 
 #### Battle mechanics
 
@@ -322,10 +341,11 @@ Improve the original **Normal Mode** experience without using the full Challenge
 
 #### Trainers and level curve
 
-- Rebalance Johto and Kanto Gym Leaders, ordinary trainers, Team Rocket, and item/money rewards.
+- Rebalance **all 16 Gym Leaders and every regular trainer inside their Gyms**, alongside ordinary trainers, rivals, Team Rocket and the Elite Four. Improve themed species variety, evolutionary stages, levels and moves, plus item/money rewards.
 - Reduce repeated Pidgey, Spearow, Caterpie, Weedle and similar trainer teams; give Bug Catchers more species and appropriate evolved Pokémon (such as Scyther, Pinsir, Heracross and later Scizor).
 - Review early-game balance with Chikorita and readily obtainable Rock-, Ground- and Normal-type support Pokémon.
-- **Falkner proposal:** raise Pidgey from Level 7 to approximately Level 10 and Pidgeotto from Level 9 to approximately Level 12; retain thematic Flying-type moves, Gust and Mud-Slap as appropriate. This is a balancing proposal, not an implemented change.
+- **Falkner proposal:** raise Pidgey from Level 7 to approximately Level 10 and Pidgeotto from Level 9 to approximately Level 12; retain thematic Flying-type moves, Gust and Mud-Slap as appropriate. This is a balancing proposal, not an implemented change. Moving TM31 to the Mart does not require removing Mud-Slap from Falkner's Pokémon.
+- **Whitney, approved Normal Mode team:** **Clefairy Lv17** (Fairy support), **Smeargle Lv18** (Sketch with support/coverage), **Girafarig Lv18** (Normal/Psychic) and **Miltank Lv20** (signature Rollout ace). This replaces the earlier Aipom proposal. Sketch is agreed, but Smeargle's remaining moves are still provisional (Seismic Toss, Thunder Wave and Icy Wind are candidates). Update Goldenrod's Gym trainers too.
 - Review trainer levels through Johto/Kanto and improve swarm availability and shiny-related mechanics where appropriate; revisit Red Gyarados's fixed DVs.
 
 #### Full wild-encounter audit
@@ -342,6 +362,8 @@ The current fishing file already has targeted changes (notably Good Rod Horsea a
 - Preserve rare unevolved species on stronger rods when desirable; do not require all Super Rod encounters to be fully evolved.
 - Balance levels and encounter rates by habitat, location, time and progression. Preserve **Horsea with the Good Rod before Clair**.
 - Test each rod in every relevant fish group, including swarm/time-dependent tables.
+
+**Bug-Catching Contest balancing:** review levels and encounter rates during Milestone 6; 96 observations confirm each regular species is obtainable, not its true encounter probability. Preserve the now-tested normal contest ending.
 
 The complete final Pokémon encounter/location guide will be written **after** this audit, during Milestone 7. Advanced six-Pokémon Gym teams and Challenge Mode AI changes remain scheduled for Version 3.
 
@@ -428,7 +450,7 @@ Preserve or relocate the original TM50 Nightmare reward.
 
 ### Mystery Gift decorations
 
-Redistribute former Mystery Gift decorations to ordinary gameplay.
+Redistribute former Mystery Gift decorations to ordinary gameplay. Once Fly moves to Falkner, **Chuck's wife** can give a replacement reward after Chuck is defeated. Select it from retired Mystery Gift items/decorations during the Version 1.5 cleanup; the specific gift is not yet decided.
 
 Potential sources:
 
@@ -506,7 +528,7 @@ Possible locations include:
 
 Introduce a Hidden Power tutor or move-type changer.
 
-Add portable Move Reminder and Move Deleter functionality where feasible.
+Expand convenience around the **Milestone 3 Pokémon PC Move Reminder** if useful. HM forgetting/replacement should work before the Blackthorn Move Deleter is retired; a duplicate Move Reminder NPC is unnecessary.
 
 ### Items and shops
 
@@ -516,6 +538,12 @@ Add portable Move Reminder and Move Deleter functionality where feasible.
 - Add convenient methods of obtaining PP Ups.
 - Improve access to evolution stones and held items.
 - Add a **reusable Escape Rope Key Item**, granted early enough to help before Union Cave; usable without consumption in locations where Escape Rope would normally work.
+
+### Bug-Catching Contest interface
+
+- Display **remaining Park Balls** and **remaining time (minutes:seconds)** during the contest in a compact, unobtrusive GBC-friendly display or easily accessible status panel.
+- Refresh counts when balls are spent and time passes; preserve existing contest mechanics and judging.
+- Consider an optional **End Contest** command so players can finish without exhausting their Park Balls.
 
 ### Other improvements
 
